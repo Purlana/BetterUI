@@ -12,7 +12,7 @@
 
         <State Name = "Root" Layout = "Common" Owner = "All">
             <State.InitialSubstates>
-                <InitialSubstate Name="SystemRoot"/>
+                <!--InitialSubstate Name="SystemRoot"/>-->
                 <InitialSubstate Name="GameRoot"/>
             </State.InitialSubstates>
         </State>
