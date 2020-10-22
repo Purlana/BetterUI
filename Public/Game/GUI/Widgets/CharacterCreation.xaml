@@ -603,7 +603,8 @@
                     <StackPanel Margin="0,0,0,100">
 
                         <TextBlock Text="{Binding Source='UI_CC_Select_Race', Converter={StaticResource TranslatedStringConverter}}" Style="{DynamicResource PanelTitleText}"/>
-                        <ContentControl Template="{StaticResource GenderTemplate}" HorizontalAlignment="Right" Margin="0,-108,108,0"/>
+                        <ContentControl Template="{StaticResource GenderTemplate}" HorizontalAlignment="Center" Margin="0,0,0,32"/><!--Modded-->
+
                         <ContentControl Template="{StaticResource BoxedItemSelection}" DataContext="{Binding Races}" Resources="{StaticResource SideBoxesTripleResources}"/>
 
                         <StackPanel Visibility="{Binding Subraces.ComboItems.Count, Converter={StaticResource CountToVisibleConverter}}" Margin="0,32,0,0">
@@ -656,7 +657,7 @@
                     </StackPanel.Resources>
                     <TextBlock Text="{Binding Source='UI_CC_Appearance', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelTitleText}"/>
 
-                    <ContentControl Template="{StaticResource GenderTemplate}" HorizontalAlignment="Center"/>
+                    <ContentControl Template="{StaticResource GenderTemplate}" HorizontalAlignment="Center" Margin="-12,0,0,0"/><!--Modded-->
 
                     <!-- Voice -->
                     <TextBlock Text="{Binding Source='UI_CC_Voice', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelHeaderText}" HorizontalAlignment="Center"/>
@@ -771,9 +772,34 @@
                                 </Style>
                             </StackPanel.Style>
                         </StackPanel>
+
+<TextBlock Text="{Binding Source='UI_CC_Makeup_Style', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelHeaderText}"/>
+                        <ContentControl Template="{DynamicResource Carousel}" Margin="0,20,0,0" DataContext="{Binding AppearanceMakeup.Materials}" HorizontalAlignment="Center"/>
+                        <StackPanel HorizontalAlignment="Center">
+                            <ListBox ItemsSource="{Binding AppearanceMakeup.ColorOptions}" ItemContainerStyle="{StaticResource AppearanceOptionStyle}">
+                                <ListBox.Template>
+                                    <ControlTemplate>
+                                        <ItemsPresenter/>
+                                    </ControlTemplate>
+                                </ListBox.Template>
+                            </ListBox>
+                            <ItemsControl DataContext="{Binding AppearanceMakeup}" Template="{StaticResource CCColorGrid}" ItemContainerStyle="{StaticResource ColorCellItemStyle}"/>
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding AppearanceMakeup.EmptyMaterialSelected}" Value="True">
+                                            <Setter Property="Opacity" Value="0.6"/>
+                                            <Setter Property="IsHitTestVisible" Value="False"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        </StackPanel>
+
                     </StackPanel>
                 </StackPanel>
             </ControlTemplate>
+
 
             <ControlTemplate x:Key="AppearanceCharacterCreationTemplate">
                 <ContentControl Template="{StaticResource CommonCharacterCreationPanel}" Padding="122,0,0,0">
