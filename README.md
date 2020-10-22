@@ -20,7 +20,7 @@ BetterUI for Baldur's Gate 3
 * Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
 
 # Discord
-* Feel free to join the Larian Discord server and discuss in the BG3 Modding Channel
+* Feel free to join the [Larian Discord](https://discord.com/invite/larianstudios) server and discuss in the BG3 Modding Channel
 
 # Attribution
 - [Baldur's Gate 3](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/), a game by [Larian Studios](http://larian.com/)
