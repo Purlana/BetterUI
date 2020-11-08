@@ -886,6 +886,18 @@
               <ContentControl x:Name="classSpellPreparation" Visibility="Collapsed" Template="{StaticResource SpellPreparationTemplate}" Margin="0,0,0,10"/>
 
             </StackPanel>
+            <!--Modded-->
+
+            <StackPanel Visibility="{Binding Gods.ComboItems.Count, Converter={StaticResource CountToVisibleConverter}}">
+              <TextBlock Text="{Binding Source='hd146e00aga3a6g4e42g8068g9271c358dc5b', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelHeaderText}"/>
+
+              <ContentControl Template="{StaticResource ValidationFailedHighlighter}" Tag="{Binding GodInvalid}" Margin="0,20,0,0">
+                <ContentControl Template="{DynamicResource Carousel}" DataContext="{Binding Gods}"/>
+              </ContentControl>
+
+              <TextBlock Text="{Binding DummyCharacter.Stats.GodDescription}" Style="{StaticResource PanelInfoText}" Margin="0,20,0,0"/>
+
+            </StackPanel>
 
             <StackPanel Visibility="{Binding Subclasses.ComboItems.Count, Converter={StaticResource CountToVisibleConverter}}">
               <TextBlock Text="{Binding Source='h1e67bc9cg0f53g4218g8ce8geb6a6636f141', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelHeaderText}"/>
@@ -893,14 +905,6 @@
               <ContentControl Template="{DynamicResource Carousel}" Margin="0,20,0,0" DataContext="{Binding Subclasses}"/>
 
               <TextBlock Text="{Binding DummyCharacter.Stats.ClassList[0].SubclassDescription}" Style="{StaticResource PanelInfoText}" Margin="0,20,0,0"/>
-
-              <StackPanel Visibility="{Binding Gods.ComboItems.Count, Converter={StaticResource CountToVisibleConverter}}">
-                <TextBlock Text="{Binding Source='hd146e00aga3a6g4e42g8068g9271c358dc5b', Converter={StaticResource TranslatedStringConverter}}" Style="{StaticResource PanelHeaderText}"/>
-                <ContentControl Template="{StaticResource ValidationFailedHighlighter}" Tag="{Binding GodInvalid}" Margin="0,20,0,0">
-                  <ContentControl Template="{DynamicResource Carousel}" DataContext="{Binding Gods}"/>
-                </ContentControl>
-                <TextBlock Text="{Binding DummyCharacter.Stats.GodDescription}" Style="{StaticResource PanelInfoText}" Margin="0,20,0,0"/>
-              </StackPanel>
 
               <ContentControl Template="{StaticResource SpellBoxesTemplate}" DataContext="{Binding ClassProgressionDetails}" Margin="0,20,0,0"/>
               <ContentControl Template="{StaticResource SpellPreparationTemplate}" Margin="0,0,0,30"/>
