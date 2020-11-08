@@ -17,7 +17,7 @@ BetterUI for Baldur's Gate 3
 * Modifies the character creation screens appearance menu to fix alignment of gender buttons
 
 # Installing
-* Download the `.pak` file from [Releases](https://github.com/ZerdBG3/DnD-Rebalancing/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
+* Download the `.pak` file from [Releases](https://github.com/Purlana/BetterUI/releases) and place it under `\Documents\Larian Studios\Baldur's Gate 3\Mods`
 
 # Discord
 * Feel free to join the [Larian Discord](https://discord.com/invite/larianstudios) server and discuss in the BG3 Modding Channel
